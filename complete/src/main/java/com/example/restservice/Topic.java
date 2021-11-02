@@ -26,13 +26,13 @@ public class Topic {
         return name;
     }
 
-    // public void String setID (String id){
-    //     this.id=id;
-    // }
+    public void  setID (String id){
+        this.id=id;
+    }
 
-    // public void String setName (String name){
-    //     this.name=name;
-    // }
+    public void  setName (String name){
+        this.name=name;
+    }
 }
 
 
