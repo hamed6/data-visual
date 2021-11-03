@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Arrays;
 import java.util.List;
@@ -14,9 +15,9 @@ public class TopicController{
     @Autowired 
     private TopicService topicService;
 
-    @RequestMapping("/topic")
-    public String getall(){
-        return "all topic";
+    @GetMapping("/topics/{id}")
+    public Topic getTopic(@PathVariable String id){
+        return topicService.getTopic(id);
     }
 
     
@@ -24,6 +25,8 @@ public class TopicController{
     public List<Topic> getallTopics(){
         return topicService.getAlltopics();
     }
+
+
     
 
 }
