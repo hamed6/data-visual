@@ -20,8 +20,9 @@ public class shipModel {
 	private String logDescrption;
 	private String logMore;
 	
-	// panel ID extracted from log
+	// *** panel ID and filename extracted from log
 	private String logHCID;
+	private String logFilename;
 	
 	
 /*	# To get and convert date and time
