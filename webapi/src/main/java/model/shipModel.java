@@ -3,13 +3,14 @@ package model;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="IMO")
 public class shipModel {
 	
 	// Unique, index, 
 	private int id;
-	
 	// Ship info specific 
 	private int imo;
 	private String shipName;
@@ -21,8 +22,89 @@ public class shipModel {
 	private String logMore;
 	
 	// *** panel ID and filename extracted from log
-	private String logHCID;
+	//private String logHCID;
 	private String logFilename;
+	
+	public shipModel() {
+		
+	}
+	public shipModel(int id, int imo, String shipName, Date logTime, String logClass, String logDescrption,
+			String logMore, String logFilename) {
+		super();
+		this.id = id;
+		this.imo = imo;
+		this.shipName = shipName;
+		this.logTime = logTime;
+		this.logClass = logClass;
+		this.logDescrption = logDescrption;
+		this.logMore = logMore;
+		this.logFilename = logFilename;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getImo() {
+		return imo;
+	}
+
+	public void setImo(int imo) {
+		this.imo = imo;
+	}
+
+	public String getShipName() {
+		return shipName;
+	}
+
+	public void setShipName(String shipName) {
+		this.shipName = shipName;
+	}
+
+	public Date getLogTime() {
+		return logTime;
+	}
+
+	public void setLogTime(Date logTime) {
+		this.logTime = logTime;
+	}
+
+	public String getLogClass() {
+		return logClass;
+	}
+
+	public void setLogClass(String logClass) {
+		this.logClass = logClass;
+	}
+
+	public String getLogDescrption() {
+		return logDescrption;
+	}
+
+	public void setLogDescrption(String logDescrption) {
+		this.logDescrption = logDescrption;
+	}
+
+	public String getLogMore() {
+		return logMore;
+	}
+
+	public void setLogMore(String logMore) {
+		this.logMore = logMore;
+	}
+
+	public String getLogFilename() {
+		return logFilename;
+	}
+
+	public void setLogFilename(String logFilename) {
+		this.logFilename = logFilename;
+	}
+
 	
 	
 /*	# To get and convert date and time
