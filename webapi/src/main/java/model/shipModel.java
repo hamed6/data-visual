@@ -3,6 +3,9 @@ package model;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 public class shipModel {
 	
 	// Unique, index, 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	// Ship info specific 
 	private int imo;
