@@ -1,7 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,13 +12,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="IMO")
-public class shipModel {
-	
-	// Unique, index, 
+public class shipModel implements Serializable { 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	// Ship info specific 
+	
+	// Ship info specific
+	//IMO column shouldn't be empty and updatable
+		//@Column(nullable = false, updatable = false)
 	private int imo;
 	private String shipName;
 	
