@@ -11,8 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="IMO")
+@Table(name="shipModel")
 public class shipModel implements Serializable { 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
