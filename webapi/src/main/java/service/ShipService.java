@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.UserNotFoundException;
 import model.shipModel;
 import repo.ShipRepo;
 
@@ -27,7 +28,9 @@ public class ShipService {
 		return shipRepo.findAll();
 	}
 	public shipModel findshipModelById(int imo) {
-		return shipRepo.findshipModelById(imo);
-//		return shipRepo.findshipModelById(imo).orElseThrow(()) -> new UserPrincipalNotFoundException("this ship doenst exist"));
+//		return shipRepo.findshipModelById(imo);
+		return shipRepo.findshipModelById(imo)
+				.orElseThrow(()-> new UserNotFoundException("user has not found"));
+		
 	}
 }
